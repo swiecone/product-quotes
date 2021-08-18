@@ -1,4 +1,4 @@
-# PRODUCTQUITES.IO 
+# ProductQuotes.io 
 
 [productquotes.io](https://api.productquotes.io) is a free JSON API for hand curated Product Quotes
 
