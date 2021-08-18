@@ -1,4 +1,4 @@
-# ProductQuotes.io 
+# ProductQuotes.io  
 
 [productquotes.io](https://api.productquotes.io) is a free JSON API for hand curated Product Quotes
 
@@ -15,7 +15,7 @@ beard, and his role in the action television series Walker, Texas Ranger.
 ```shell
 # Retrieve all quotes
 $ curl --request GET \
-       --url 'https://api.productquotes.io/' \
+       --url 'https://api.productquotes.io/random' \
        --header 'accept: application/json'
 
 
@@ -26,16 +26,8 @@ Example response:
 ```json
 [
     {
-        "quote": "this is the first quote I created",
-        "author": "anonimous",
-        "_id": "611c3bd134b044111c34de3f",
-        "__v": 0
-    },
-    {
-        "quote": "this is the second quote",
-        "author": "anonimous",
-        "_id": "611d5f338119c00ab6922861",
-        "__v": 0
+        "quote": "tWhile I’ve met many engineers who don’t want to do discovery, I’ve rarely met an engineer who didn’t have an opinion about what the team should be building.",
+        "author": "Teresa Torres",
     }
 ]
 ```
