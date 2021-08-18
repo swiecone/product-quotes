@@ -20,7 +20,7 @@ Example response:
 ```json
 [
     {
-        "quote": "tWhile I’ve met many engineers who don’t want to do discovery, I’ve rarely met an engineer who didn’t have an opinion about what the team should be building.",
+        "quote": "While I’ve met many engineers who don’t want to do discovery, I’ve rarely met an engineer who didn’t have an opinion about what the team should be building.",
         "author": "Teresa Torres",
     }
 ]
