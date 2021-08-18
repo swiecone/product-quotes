@@ -4,12 +4,6 @@
 
 ProductQuotes is a collection of Product Quotes to inspire your product teams. 
 
-
-Chuck Norris facts have spread around the world, leading not only to translated versions, but also spawning localized
-versions mentioning country-specific advertisements and other Internet phenomena. Allusions are also sometimes made to
-his use of roundhouse kicks to perform seemingly any task, his large amount of body hair with specific regard to his
-beard, and his role in the action television series Walker, Texas Ranger.
-
 ## Usage
 
 ```shell
