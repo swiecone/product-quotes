@@ -13,7 +13,7 @@ beard, and his role in the action television series Walker, Texas Ranger.
 ## Usage
 
 ```shell
-# Retrieve all quotes
+# Retrieve a random product quote
 $ curl --request GET \
        --url 'https://api.productquotes.io/random' \
        --header 'accept: application/json'
@@ -46,4 +46,4 @@ Having trouble with this repository? Check out the documentation at the reposito
 
 Happy Coding
 
-:v:
+:v:gi
