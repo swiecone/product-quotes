@@ -28,26 +28,26 @@ router.get('/quotes', async (req, res) =>{
 })
 
 
-//Get one specific task from the list 
-router.get('/tasks/:id', async (req, res) =>{
+//Get one specific quote from the list 
+router.get('/quotes/:id', async (req, res) =>{
     const _id = req.params.id 
 
     try {
-        const task = await Task.findById({_id})
+        const quote = await Quote.findById({_id})
 
-        if (!task) {
+        if (!quote) {
             res.status(404).send("task not found")
         } 
-        res.send(task)
+        res.send(quote)
     } catch (e) {
         res.status(400).send(e)
     }
 
 })
 
-//Update a task 
 
 
+//Update a quote 
 router.patch('/quotes/:id', async (req, res) =>{
     const updates = Object.keys(req.body)
     const allowedUpdates = ['quote', 'author']
@@ -67,7 +67,7 @@ router.patch('/quotes/:id', async (req, res) =>{
         updates.forEach((update) =>  quote[update] = req.body[update])
         await quote.save()   
         res.send(quote)
-        
+
     } catch (e) {
         res.status(400).send(e)
     }
