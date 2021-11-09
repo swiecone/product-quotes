@@ -12,6 +12,19 @@ console.log(publicDirectoryPath)
 const app = express()
 const port = process.env.PORT || 3000
 
+// app.use((req, res, next) => {
+//     if(req.method === 'GET') {
+//         res.send('Get responses have been disabled')
+//     } else {
+//         next()
+//     }
+// })
+
+// app.use((req, res, next) => {
+//     res.status(503).send('site on maintanance mode')
+// })
+
+
 app.use(express.json())
 
 app.use(quoteRouter)

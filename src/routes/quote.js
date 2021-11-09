@@ -1,9 +1,10 @@
 const express = require('express')
 const router = new express.Router()
+const auth = require('../middleware/auth')
 const Quote = require('../models/quote')
 
 //Create a new quote 
-router.post('/quotes', async (req, res) =>{
+router.post('/quotes', auth,  async (req, res) =>{
     const quote = new Quote(req.body)
     console.log(quote)
 
@@ -48,7 +49,7 @@ router.get('/quotes/:id', async (req, res) =>{
 
 
 //Update a quote 
-router.patch('/quotes/:id', async (req, res) =>{
+router.patch('/quotes/:id', auth, async (req, res) =>{
     const updates = Object.keys(req.body)
     const allowedUpdates = ['quote', 'author']
     const isValidOperation = updates.every((update) =>  allowedUpdates.includes(update))
@@ -74,7 +75,7 @@ router.patch('/quotes/:id', async (req, res) =>{
 
 })
 
-router.delete('/quotes/:id', async (req, res) =>{
+router.delete('/quotes/:id', auth,  async (req, res) =>{
     
     try {
         const quote = await Quote.findByIdAndDelete(req.params.id)

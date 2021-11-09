@@ -1,6 +1,7 @@
 const express = require('express')
 const router = new express.Router()
 const User = require('../models/user')
+const auth = require('../middleware/auth')
 
 
 router.post('/users', async (req, res) => {
@@ -18,7 +19,7 @@ router.post('/users', async (req, res) => {
 router.post('/users/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
-        const token = await user.generateAuthToken()
+        const token = await use6187078aa3822110a915a625r.generateAuthToken()
         res.send({user, token})
     } catch (e) {
         res.status(400).send()
@@ -26,7 +27,7 @@ router.post('/users/login', async (req, res) => {
 })
 
 //Read all users 
-router.get('/users', async (req, res) =>{
+router.get('/users', auth, async (req, res) =>{
     try {
         const users = await User.find({})
         res.send(users)
@@ -36,7 +37,7 @@ router.get('/users', async (req, res) =>{
 })
 
 //Read one users 
-router.get('/users/:id', async (req, res) =>{
+router.get('/users/:id', auth,  async (req, res) =>{
     try {
         const user = await User.findById(req.params.id)
         res.send(user)
@@ -48,7 +49,7 @@ router.get('/users/:id', async (req, res) =>{
 
 
 //Update a user 
-router.patch('/users/:id', async (req, res) =>{
+router.patch('/users/:id',auth,  async (req, res) =>{
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'age', 'email', 'password', 'admin']
     const isValidOperation = updates.every((update) =>  allowedUpdates.includes(update))
@@ -74,7 +75,7 @@ router.patch('/users/:id', async (req, res) =>{
 })
 
 // Delete a user 
-router.delete('/users/:id', async (req, res) =>{
+router.delete('/users/:id', auth, async (req, res) =>{
     try {
         const user = await User.findByIdAndDelete(req.params.id)
         
