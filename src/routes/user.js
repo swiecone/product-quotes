@@ -5,8 +5,9 @@ const auth = require('../middleware/auth')
 
 
 router.post('/users', async (req, res) => {
-    const user = new User(req.body)
-    const token = await user.generateAuthToken()
+
+        const user = new User(req.body)
+        const token = await user.generateAuthToken()    
 
     try {
         await user.save()

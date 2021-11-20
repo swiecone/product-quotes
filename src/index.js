@@ -5,8 +5,8 @@ const quoteRouter = require('./routes/quote')
 const websiteRouter = require('./routes/website')
 const userRouter = require('./routes/user')
 
-const publicDirectoryPath = path.join(__dirname, 'public')
-console.log(publicDirectoryPath)
+// const publicDirectoryPath = path.join(__dirname, 'public')
+// console.log(publicDirectoryPath)
 
 
 const app = express()

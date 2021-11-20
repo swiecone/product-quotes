@@ -22,6 +22,7 @@ router.get('/quotes', async (req, res) =>{
 
     try {
         const quotes = await Quote.find({})
+        console.log(quotes)
         res.send(quotes)
     } catch (e) {
         res.status(400).send(e)
@@ -37,7 +38,7 @@ router.get('/quotes/:id', async (req, res) =>{
         const quote = await Quote.findById({_id})
 
         if (!quote) {
-            res.status(404).send("task not found")
+            res.status(404).send("quote not found")
         } 
         res.send(quote)
     } catch (e) {
